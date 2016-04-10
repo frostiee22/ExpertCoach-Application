@@ -1,0 +1,80 @@
+<ion-view title="Match Form">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="enterCtrl">
+
+        <form ng-submit="submitMatch()">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="label">Player :</span>
+                    <select ng-options="player as player.name for player in newplayers track by player.Player_ID" ng-model="match.player.Player_ID"></select>
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="label">Game :</span>
+                    <select ng-options="game as game.game for game in newgames track by game.Game_ID" ng-model="match.game.Game_ID"></select>
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Goals</span>
+                    <input type="text" name="goals" placeholder="Goals" ng-model="match.goals">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Succesful Passes</span>
+                    <input type="text" name="succesfulpasses" placeholder="Succesful Passes" ng-model="match.succesfulpasses">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Unsuccesful Passes</span>
+                    <input type="text" placeholder="Unsuccesful Passes" ng-model="match.unsuccesfulpasses">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Touches</span>
+                    <input type="text" placeholder="Touches" ng-model="match.touches">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Duels Won</span>
+                    <input type="text" placeholder="Duels Won" ng-model="match.duelswon">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Duels Lost</span>
+                    <input type="text" placeholder="Duels Lost" ng-model="match.duelslost">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Handballs Conceded</span>
+                    <input type="text" placeholder="Handballs Conceded" ng-model="match.handballsconceded">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Penalties Conceded</span>
+                    <input type="text" placeholder="Penalties Conceded" ng-model="match.penaltiesconceded">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Yellow Card(s)</span>
+                    <input type="text" placeholder="Yellow Card(s)" ng-model="match.yellowcard">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Red Card(s)</span>
+                    <input type="text" placeholder="Red Card(s)" ng-model="match.redcard">
+                </label>
+
+
+                <button class="button button-block button-positive">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Response: <b ng-bind="response"></b>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

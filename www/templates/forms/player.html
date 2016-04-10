@@ -1,0 +1,39 @@
+<ion-view title="Player Form">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="enterCtrl">
+
+        <form ng-submit="submitPlayer()">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" t>First Name</span>
+                    <input type="text" name="fname" placeholder="First Name" ng-model="player.fname">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" name="lname" placeholder="Last Name" ng-model="player.lname">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Position Id</span>
+                    <input type="text" name="position" placeholder="Position Id" ng-model="player.position" ng-click="showSheet()">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="label">Team :</span>
+                    <select ng-options="team as team.Team for team in teams track by team.Team_ID" ng-model="player.team.Team_ID"></select>
+                </label>
+
+                <button class="button button-block button-positive">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Response: <b ng-bind="response"></b>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

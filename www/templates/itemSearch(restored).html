@@ -1,0 +1,60 @@
+<ion-view title="Player Search">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="itemSearchCtrl as item">
+
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <script id="my-popover.html" type="text/ng-template">
+            <ion-popover-view>
+                <ion-header-bar>
+                    <h1 class="title">{{name.name}} Position</h1>
+                </ion-header-bar>
+                <ion-content>
+                    <div class="card">
+                        <div class="item item-body">Attacker : {{SPD.stat.attacker*100}}%
+                            <progress max="1" value="{{SPD.stat.attacker}}">
+                        </div>
+                        <div class="item item-body">Defender : {{SPD.stat.defender*100}}%
+                            <progress max="1" value="{{SPD.stat.defender}}">
+                        </div>
+                        <div class="item item-body">MidFielder : {{SPD.stat.midfielder*100}}%
+                            <progress max="1" value="{{SPD.stat.midfielder}}">
+                        </div>
+                        <div class="item item-body">Goal Keeper : {{SPD.stat.keeper*100}}%
+                            <progress max="1" value="{{SPD.stat.keeper}}">
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-popover-view>
+        </script>
+
+
+
+        <div ng-init="items">
+        </div>
+
+        <form class="list"></form>
+        <form class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="" ng-model="searchText">
+            </label>
+        </form>
+
+
+        <div class="list card" collection-repeat="item in items | filter:searchText" ng-model="item.name" ui-sref="tabsController.details"
+        ng-click="details()" on-hold="openPopover($event)">
+            <div class="item item-avatar">
+                <img src="img/person.png">
+                <h2>{{item.name}}</h2>
+                <p>Position : {{item.pos}}</p>
+            </div>
+        </div>
+        
+        <div class="list card">
+            <div class="item item-text-wrap">
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

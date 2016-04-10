@@ -1,0 +1,39 @@
+<ion-view title="Game Form">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="enterCtrl">
+
+        <form ng-submit="submitGame()">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" t>dd.mm.yyyy</span>
+                    <input type="text" name="data" placeholder="dd.mm.yyyy" ng-model="game.date">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Venue</span>
+                    <input type="text" name="venue" placeholder="Venue" ng-model="game.venue">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="label">Team 1</span>
+                    <select ng-options="team1 as team1.Team for team1 in teams track by team1.Team_ID" ng-model="game.team1.Team_ID"></select>
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="label">Team 2</span>
+                    <select ng-options="team2 as team2.Team for team2 in teams track by team2.Team_ID" ng-model="game.team2.Team_ID"></select>
+                </label>
+
+                <button class="button button-block button-positive">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Response: <b ng-bind="response"></b>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

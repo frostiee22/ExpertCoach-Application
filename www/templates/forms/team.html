@@ -1,0 +1,29 @@
+<ion-view title="Team Form">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="enterCtrl">
+
+        <form ng-submit="submitTeam()">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Coach ID</span>
+                    <input type="text" name="coachid" placeholder="Coach ID" ng-model="team.coachid">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" t>Team Name</span>
+                    <input type="text" name="tname" placeholder="Team Name" ng-model="team.tname">
+                </label>
+
+                <button class="button button-block button-positive">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Response: <b ng-bind="response"></b>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

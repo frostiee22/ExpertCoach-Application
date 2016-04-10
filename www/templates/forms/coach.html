@@ -1,0 +1,46 @@
+<ion-view title="Coach Form">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="enterCtrl">
+
+        <!--<form method="POST" action="/Coach" class="form-signin" role="form">-->
+        <form ng-submit="submitCoach()">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">First Name</span>
+                    <input type="text" name="fname" placeholder="First Name"  ng-model="coach.fname">
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" name="lname" placeholder="Last Name" ng-model="coach.lname">
+                </label>
+                
+                 <label class="item item-input item-floating-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" name="username" placeholder="Username" ng-model="coach.username">
+                </label>
+
+                <!--onclick="submit(); setTimeout(function(){reset()},5000); return false;"-->
+
+                <button class="button button-block button-positive" type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Coach ID: <b ng-bind="coachID"></b>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                Response: <b ng-bind="response"></b>
+            </div>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>

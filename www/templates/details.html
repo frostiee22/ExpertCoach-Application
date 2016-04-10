@@ -1,0 +1,35 @@
+<ion-view title="Game Details">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="PLayerDetailsCtrl">
+
+        <div class="item item-text-wrap">
+            <canvas id="line" class="chart chart-radar" data="data" labels="labels" legend="true" series="series" options="{pointDot : true}"></canvas>
+        </div>
+
+            
+        <div class="list card" ng-repeat="store in stores">
+            <div class="item item-divider">{{store.name}}</div>
+            <div class="item item-body">% Duels won : {{(store.Duels_Won/(store.Duels_Won + store.Duels_Lost))*100 | number:1}}</div>
+            <div class="item item-body">% Succesful Passes : {{(store.Passes_Succesful/(store.Passes_Succesful + store.Passed_Unsuccessful))*100 |number:1}}</div>
+            <div class="item item-body">Touches : {{store.Touches}}</div>
+            <div class="item item-body">Goals : {{store.Goals}}</div>
+            <div class="item item-body"></div>            
+        </div>
+
+
+
+
+        <!--/////////////////////////////////////////////////////-->
+
+
+        
+
+
+
+        <!--////////////////////////////////////////////////////-->
+
+
+
+
+
+    </ion-content>
+</ion-view>
